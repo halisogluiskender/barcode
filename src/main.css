@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  @apply flex flex-col bg-[#D1D5DB];
+  height: calc(var(--vh, 1vh) * 100);
+  -webkit-tap-highlight-color: transparent;
+}
+.Main {
+  @apply flex-1 overflow-auto;
+}
+/* Login */
+.loginWrapper {
+  @apply bg-gray-300 w-full h-full flex items-center justify-center;
+}
+.loginInline {
+  @apply flex w-full pl-10 pr-10 flex-col items-center justify-center;
+}
+.title {
+  @apply font-black text-gray-400 text-7xl mb-8;
+}
+.form {
+  @apply flex w-full rounded-sm flex-col items-center gap-6 justify-center;
+}
+.input {
+  @apply w-full p-3 rounded-sm outline-none shadow-sm bg-white border-[1px] border-transparent focus:border-[#2684ff] placeholder:text-[#9CA3AF];
+}
+.button {
+  @apply w-full bg-blue-300 p-3 rounded-sm shadow-sm text-blue-900 font-semibold text-lg;
+}
+
+.barcodeItem {
+  @apply w-full min-h-[48px] bg-white shadow-sm rounded-sm;
+}
+
+#reader video {
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+  z-index: 1;
+}
+#reader #qr-shaded-region {
+  inset: 0px 0px -5px 0px !important;
+}
