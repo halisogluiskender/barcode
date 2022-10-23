@@ -64,7 +64,11 @@ function MusteriForm() {
           className="button mb-4 !bg-gray-400 !text-gray-900 flex items-center justify-center gap-4"
           onClick={() => setClick(!click)}
         >
-          <img src="/kamera.png" alt="Kamera" className="w-8" />
+          <img
+            src={`${process.env.PUBLIC_URL}/kamera.png`}
+            alt="Kamera"
+            className="w-8"
+          />
           Kamerayı {click ? "Kapat" : "Aç"}
         </button>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

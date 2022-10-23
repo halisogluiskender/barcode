@@ -11,7 +11,7 @@ function Navbar() {
             className=" h-full w-4/12 flex flex-col items-center justify-center text-sm opacity-60 active:opacity-100"
           >
             <img
-              src={`/file.png`}
+              src={`${process.env.PUBLIC_URL}/file.png`}
               alt="Okutulanlar"
               className="w-[20px] mb-[2px]"
             />
@@ -22,7 +22,11 @@ function Navbar() {
               to={company.status ? "urunsec" : "/home"}
               className="rounded-full w-[60px] h-[60px] bg-white left-0 bottom-1/4 right-0 m-auto absolute shadow-md bg-gradient-to-t from-blue-700 outline-none to-blue-400 active:bg-gradient-to-t active:from-slate-500 active:to-slate-500 flex items-center justify-center p-2"
             >
-              <img src={`/barcode_icon.png`} alt="Barkod" className="w-full" />
+              <img
+                src={`${process.env.PUBLIC_URL}/barcode_icon.png`}
+                alt="Barkod"
+                className="w-full"
+              />
             </Link>
           </div>
           <Link
@@ -30,7 +34,7 @@ function Navbar() {
             className=" h-full w-4/12 flex flex-col items-center justify-center  text-sm opacity-60 active:opacity-100"
           >
             <img
-              src={`/logout.png`}
+              src={`${process.env.PUBLIC_URL}/logout.png`}
               alt="Log Out"
               className="w-[20px] mb-[2px]"
             />

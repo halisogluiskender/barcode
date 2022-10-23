@@ -32,12 +32,12 @@ export const AppContextProvider = ({ children }) => {
   const LogOut = () => {
     localStorage.removeItem("UserAuth");
     localStorage.removeItem("Company");
-    window.location.reload();
+    window.location.replace(process.env.PUBLIC_URL);
   };
 
   const MusteriKayitBitir = () => {
     localStorage.removeItem("Company");
-    window.location.replace("/");
+    window.location.replace(process.env.PUBLIC_URL);
   };
 
   const [musteriler, setMusteriler] = useState([]);

@@ -23,13 +23,12 @@ function App() {
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
   }, []);
-
   return (
     <div className="App">
       <AppContextProvider>
         <main className="Main">
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path={process.env.PUBLIC_URL} element={<Login />} />
             <Route element={<AuthControl />}>
               <Route path="/home" index element={<Home />} />
               <Route path="/musterilistesi" element={<MusteriListe />} />
@@ -39,7 +38,10 @@ function App() {
               </Route>
             </Route>
 
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route
+              path="*"
+              element={<Navigate to={process.env.PUBLIC_URL} replace />}
+            />
           </Routes>
         </main>
         <Navbar />

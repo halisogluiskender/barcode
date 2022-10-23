@@ -9,11 +9,7 @@ const useAuth = () => {
 function AuthControl() {
   const isAuth = useAuth();
 
-  return isAuth ? (
-    <Outlet />
-  ) : (
-    <Navigate to="/" replace state={{ from: process.env.REACT_APP_BASE_URL }} />
-  );
+  return isAuth ? <Outlet /> : <Navigate to={process.env.PUBLIC_URL} replace />;
 }
 
 export default AuthControl;

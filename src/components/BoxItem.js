@@ -61,7 +61,11 @@ function BoxItem({ to, title, renk, metre, delData }) {
           onClick={Delete}
           className="pl-5 pr-5 bg-[#eee] rounded-r-sm flex justify-center items-center"
         >
-          <img src={`/delete_icon.png`} alt="Delete" className="w-6 h-6" />
+          <img
+            src={`${process.env.PUBLIC_URL}/delete_icon.png`}
+            alt="Delete"
+            className="w-6 h-6"
+          />
         </button>
       </div>
     </>

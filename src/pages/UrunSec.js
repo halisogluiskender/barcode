@@ -65,7 +65,7 @@ function UrunSec() {
     <>
       <wc-toast></wc-toast>
       <Screen
-        src="/barcode_icon.svg"
+        src={`${process.env.PUBLIC_URL}/barcode_icon.svg`}
         alt="Screen"
         text="Barkot taramak için tıklayın."
         scanner={false}
