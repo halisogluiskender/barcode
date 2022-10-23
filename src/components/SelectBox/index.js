@@ -4,7 +4,7 @@ import { useAppContext } from "context/AppContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function SelectBox() {
+function SelectBox({ selectRef }) {
   const { company, setCompany } = useAppContext();
 
   const [Firmalar, setFirmalar] = useState([]);
@@ -43,6 +43,7 @@ function SelectBox() {
   return (
     <>
       <AsyncCreatableSelect
+        isClearable
         loadingMessage={() => "Yükleniyor..."}
         noOptionsMessage={() => "Lütfen birkaç harf yazın!"}
         formatCreateLabel={(inputValue) => `Ekle: "${inputValue}"`}
@@ -52,6 +53,8 @@ function SelectBox() {
         className="w-full shadow-sm"
         styles={colourStyles}
         placeholder="Firma Seçin!"
+        name="firma"
+        ref={selectRef}
       />
     </>
   );

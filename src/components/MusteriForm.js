@@ -1,41 +1,47 @@
 import axios from "axios";
 import { useAppContext } from "context/AppContext";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "wc-toast";
 import SelectBox from "./SelectBox";
 function MusteriForm() {
   const { auth, company, setCompany, setClick, click } = useAppContext();
   let navigate = useNavigate();
+  const selectRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { data } = await axios.post(`${process.env.REACT_APP_API_URL}`, {
-      company,
-      email: auth.email,
-      action: "MusteriAdd",
-    });
-    if (data.company.status) {
-      toast.success("Müşteri başarıyla eklendi!");
-      const ID = data.company.id;
-      setCompany({
-        ID,
-        ...company,
+    const firma = e.target[1].value;
+    if (firma !== "") {
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}`, {
+        company,
         email: auth.email,
-        [e.target[1].name]: e.target[1].value,
-        status: true,
+        action: "MusteriAdd",
       });
-      localStorage.setItem(
-        "Company",
-        JSON.stringify({
+      if (data.company.status) {
+        toast.success("Müşteri başarıyla eklendi!");
+        const ID = data.company.id;
+        setCompany({
           ID,
           ...company,
           email: auth.email,
           [e.target[1].name]: e.target[1].value,
           status: true,
-        }),
-      );
+        });
+        localStorage.setItem(
+          "Company",
+          JSON.stringify({
+            ID,
+            ...company,
+            email: auth.email,
+            [e.target[1].name]: e.target[1].value,
+            status: true,
+          }),
+        );
+      }
+    } else {
+      toast.error("Lütfen bir firma seçiniz!");
+      selectRef.current.focus();
     }
   };
 
@@ -74,7 +80,7 @@ function MusteriForm() {
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <label>
             <div className="flex gap-2 w-full">
-              <SelectBox />
+              <SelectBox selectRef={selectRef} />
             </div>
             {/* <small>Doldurulması zorunlu</small> */}
           </label>

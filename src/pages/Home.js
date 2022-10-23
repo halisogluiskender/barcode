@@ -37,7 +37,7 @@ function Home() {
               </span>
             </button>
             <img
-              src="/screen_images.png"
+              src={`${process.env.PUBLIC_URL}/screen_images.png`}
               alt="Barkode"
               className="w-full h-auto z-0 absolute inset-0 m-auto p-28 opacity-25"
             />
