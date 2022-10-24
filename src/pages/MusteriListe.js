@@ -27,7 +27,7 @@ function MusteriListe() {
           <div className="pl-5 pr-5 pb-5 h-full gap-4 flex flex-col">
             {musteriler.map((musteri) => (
               <BoxItem
-                to={`/urunlistesi/${musteri.ID}`}
+                to={`${process.env.REACT_APP_API_URL}/urunlistesi/${musteri.ID}`}
                 key={musteri.ID}
                 delData={{ musteri: musteri.ID }}
                 title={JSON.parse(musteri.CONTENT).company.firma_name.label}
