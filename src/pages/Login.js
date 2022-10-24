@@ -39,7 +39,7 @@ function Login() {
     }
   };
   useEffect(() => {
-    auth.loggedIn && navigate("/home");
+    auth.loggedIn && navigate(`${process.env.PUBLIC_URL}/home`);
   }, [auth.loggedIn, navigate]);
   return (
     <>
