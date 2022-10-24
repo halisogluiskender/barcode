@@ -33,9 +33,25 @@ function UrunListe() {
       <wc-toast></wc-toast>
       {urunler.barkods?.length > 0 ? (
         <>
-          <div className="p-5 text-[#8D939E]">
-            <h1 className="text-3xl font-semibold">{urunler.firma_name}</h1>
-            <small className="text-sm">Müşteri Temsilcisi:{auth.email} </small>
+          <div className="p-5 text-[#8D939E] flex flex-row items-start gap-2 justify-center">
+            {urunler.imageSrc && (
+              <div>
+                <img
+                  src={urunler.imageSrc}
+                  alt={urunler.firma_name}
+                  className="w-24 h-14 object-cover object-center rounded-sm shadow-sm"
+                />
+              </div>
+            )}
+
+            <div className="w-2/3 flex-1">
+              <h1 className="text-xl height leading-none mt-[-2px] font-semibold">
+                {urunler.firma_name}
+              </h1>
+              <span className="text-sm leading-normal w-full whitespace-nowrap overflow-hidden relative">
+                <small>M.Temsilci: {auth.email}</small>
+              </span>
+            </div>
           </div>
           <div className="pl-5 pr-5 pb-4 gap-4 flex flex-col">
             {urunler.barkods?.map((uruns, i) => (
