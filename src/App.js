@@ -30,10 +30,23 @@ function App() {
           <Routes>
             <Route path={process.env.PUBLIC_URL} element={<Login />} />
             <Route element={<AuthControl />}>
-              <Route path="/home" index element={<Home />} />
-              <Route path="/musterilistesi" element={<MusteriListe />} />
-              <Route path="/urunsec" element={<UrunSec />} />
-              <Route path="/urunlistesi" element={<UrunListe />}>
+              <Route
+                path={`${process.env.PUBLIC_URL}/home`}
+                index
+                element={<Home />}
+              />
+              <Route
+                path={`${process.env.PUBLIC_URL}/musterilistesi`}
+                element={<MusteriListe />}
+              />
+              <Route
+                path={`${process.env.PUBLIC_URL}/urunsec`}
+                element={<UrunSec />}
+              />
+              <Route
+                path={`${process.env.PUBLIC_URL}/urunlistesi`}
+                element={<UrunListe />}
+              >
                 <Route path=":id" element={<UrunListe />} />
               </Route>
             </Route>

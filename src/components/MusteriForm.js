@@ -55,7 +55,7 @@ function MusteriForm() {
 
   useEffect(() => {
     const setTimeoutId = setTimeout(() => {
-      company.status && navigate("/urunsec");
+      company.status && navigate(`${process.env.PUBLIC_URL}/urunsec`);
     }, 1000);
 
     return () => {

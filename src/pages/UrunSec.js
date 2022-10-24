@@ -59,7 +59,7 @@ function UrunSec() {
         });
   };
   useEffect(() => {
-    !company.status && navigate("/home");
+    !company.status && navigate(`${process.env.PUBLIC_URL}/home`);
   }, [company.status, navigate]);
   return (
     <>
