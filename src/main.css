@@ -18,7 +18,7 @@
   @apply flex w-full pl-10 pr-10 flex-col items-center justify-center;
 }
 .title {
-  @apply font-black text-gray-400 text-7xl mb-8;
+  @apply font-black text-gray-400 text-6xl mb-8;
 }
 .form {
   @apply flex w-full rounded-sm flex-col items-center gap-6 justify-center;
