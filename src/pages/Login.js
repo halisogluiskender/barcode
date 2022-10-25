@@ -46,7 +46,7 @@ function Login() {
       <wc-toast></wc-toast>
       <div className="loginWrapper">
         <div className="loginInline">
-          <h1 className="title">Login</h1>
+          <h1 className="title">Nilba</h1>
           <form className="form" onSubmit={handleSubmit}>
             <input
               className="input"
