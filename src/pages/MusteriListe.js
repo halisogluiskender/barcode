@@ -18,7 +18,8 @@ function MusteriListe() {
   }, [setMusteriler]);
   return (
     <>
-      {musteriler.length > 0 ? (
+      {musteriler.filter((musteri) => musteri.EMAIL === auth.email).length >
+      0 ? (
         <>
           <div className="p-5 text-[#8D939E]">
             <h1 className="text-3xl font-semibold">Müşteriler</h1>
